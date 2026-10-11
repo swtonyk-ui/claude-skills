@@ -36,6 +36,15 @@
   td { border-bottom: 1px solid #dde2e8; padding: 4px 6px; vertical-align: top; }
   tr:nth-child(even) td { background: #F7F9FB; }
   .toc td { padding: 3px 6px; }
+  .key { border: 2px solid var(--navy); border-radius: 6px; padding: 7px 11px; margin: 4px 0 12px; break-inside: avoid; }
+  .key::before { content: "핵심 3줄"; display: block; font-weight: 700; color: var(--navy); }
+  .appraise { background: #EEF6F1; border-left: 4px solid var(--green); border-radius: 4px; padding: 7px 11px; margin: 6px 0 9px; break-inside: avoid; }
+  .appraise::before { content: "비판적 읽기 · "; font-weight: 700; color: var(--green); }
+  .pearl { background: #FFF8DB; border-left: 4px solid #C9A400; border-radius: 4px; padding: 7px 11px; margin: 6px 0 9px; break-inside: avoid; }
+  .pearl::before { content: "판독 팁 · "; font-weight: 700; color: #8A7000; }
+  .quiz { border: 1.5px dashed var(--blue); border-radius: 6px; padding: 7px 11px; margin: 12px 0; }
+  .quiz::before { content: "자가 점검"; display: block; font-weight: 700; color: var(--blue); }
+  .quiz .ans { display: block; font-size: 9pt; color: var(--grey); }
   .note { font-size: 8.8pt; color: var(--grey); }
 </style>
 </head>
@@ -52,6 +61,10 @@
     <div class="case">케이스 연결</div>          "📌 우리 케이스" box (only if a case was given)
     <div class="grid2"> … </div>               two columns (text + figure, or two figures)
     <figure class="s|m"><img src="img/…"><figcaption><b>Fig N.</b> 무엇을 보면 되는지</figcaption></figure>
+    <div class="key">핵심 3줄</div>              under paper-head (medical mode)
+    <div class="appraise">…</div>              비판적 읽기 (original research)
+    <div class="pearl">…</div>                 판독 팁 / pitfall (review)
+    <div class="quiz"><ol><li>질문<span class="ans">정답: 답 (근거 Fig N)</span></li></ol></div>
     <table><tr><th>…</th></tr><tr><td>…</td></tr></table>
   </section>
 -->
