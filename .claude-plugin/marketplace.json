@@ -1,0 +1,11 @@
+{
+  "name": "swtonyk-skills",
+  "owner": { "name": "swtonyk-ui" },
+  "plugins": [
+    {
+      "name": "paper-guide",
+      "source": "./plugins/paper-guide",
+      "description": "논문 PDF → 문단별 한글 해설본 PDF (영어 해부학 용어 유지, 논문 figure 포함)"
+    }
+  ]
+}

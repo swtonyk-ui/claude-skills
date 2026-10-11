@@ -1,0 +1,5 @@
+{
+  "name": "paper-guide",
+  "version": "1.0.0",
+  "description": "논문 PDF → 문단별 한글 해설본 PDF (영어 해부학 용어 유지, 논문 figure 포함)"
+}
