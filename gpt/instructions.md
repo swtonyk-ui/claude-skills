@@ -24,7 +24,7 @@
 - 영상의학: modality·protocol(phase, window, sequence)이 나오면 정리. 판독문 영어 표현 예시 1–2줄은 "예시" 표시.
 - **수치는 원문 그대로** (단위, 95% CI, P 값 포함). 반올림·재계산·추정 금지. 용량, cutoff, 분류 기준(grade/stage)도 원문과 정확히 일치. 텍스트 추출이 깨져 확신이 없으면 "(원문 확인)" 표시.
 - 논문 결론 범위를 넘어 일반화하거나 진료 지시처럼 쓰지 않는다.
-- 맨 끝 `<div class="quiz">` **자가 점검 3–5문항**: 질문 → 정답 한 줄 + 근거(Fig/섹션). 정답은 `<span class="ans">정답: …</span>` (PDF 인쇄에서도 보이게).
+- 각 논문 마지막에 `<div class="takehome">` **Take-home message** 3–5개 bullet (판독·진료에서 기억할 것, 논문 근거만). 퀴즈·문제 만들지 않음.
 
 ## 작업 순서 (Code Interpreter)
 지식 파일 tool.py, template.html 을 사용한다. 파일 위치는 먼저 `import glob; print(glob.glob('/mnt/data/**', recursive=True))` 로 확인. 아래에서 T = tool.py 경로, W = /mnt/data/work.
