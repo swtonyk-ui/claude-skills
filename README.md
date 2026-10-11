@@ -18,6 +18,16 @@
 
 `plugins/paper-guide/skills/paper-guide` 폴더를 zip으로 묶어 Settings → Capabilities → Skills에서 업로드 (코드 실행 켜기 필요).
 
+### ChatGPT (나만의 GPT)
+
+1. ChatGPT → GPT 탐색 → 만들기 → **구성(Configure)**
+2. **지침**: [`gpt/instructions.md`](gpt/instructions.md) 내용 붙여넣기
+3. **지식**: [`gpt/tool.py`](gpt/tool.py), [`gpt/template.html`](gpt/template.html) 업로드
+4. **기능**: 코드 인터프리터 및 데이터 분석 켜기
+5. 저장 → 링크가 있는 사람 공유
+
+결과는 그림이 들어간 HTML 한 파일 → 브라우저에서 인쇄 → PDF로 저장.
+
 ### 주의
 
 해설본에는 원 논문 그림이 들어가므로 개인 학습용으로만 쓰고 재배포하지 마세요.

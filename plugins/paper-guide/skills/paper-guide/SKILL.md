@@ -37,7 +37,7 @@ Uploaded files on claude.ai are usually under `/mnt/user-data/uploads/`; write d
      `"$b" --headless=new --disable-gpu --no-sandbox --no-pdf-header-footer --print-to-pdf=<out.pdf> file://$W/guide.html`
    - WeasyPrint: `pip install -q weasyprint` then `python3 -c "import weasyprint; weasyprint.HTML('$W/guide.html').write_pdf('<out.pdf>')"`
      (needs a Korean font; if text renders as boxes, `fc-list :lang=ko` → set `font-family` in the CSS to an installed Korean font, or install `fonts-noto-cjk`.)
-   - Neither works → deliver a **self-contained HTML** (inline images as base64) and tell the user: 브라우저에서 열고 인쇄 → PDF로 저장.
+   - Neither works → `python3 $SK/tool.py bundle $W/guide.html <out.html>` (images inlined, one file) and tell the user: 브라우저에서 열고 인쇄 → PDF로 저장.
 6. **Check** (PDF only): `python3 $SK/tool.py preview <out.pdf> $W/preview.png`, view it. Fix oversized figures (`figure.s` ≈ 210px, `figure.m` ≈ 290px), near-empty pages, broken SVG (`<b>` is invalid inside `<svg><text>`; use `<tspan font-weight="700">`). Re-render until clean.
 7. Deliver the file and reply with page count + section list (one line each). Say what was skipped.
 

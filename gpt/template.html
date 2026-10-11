@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}}</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 15mm 14mm; }
+  :root { --navy:#142B4C; --air:#E06C1A; --blue:#2D6CB5; --green:#2F8F57; --grey:#5B6470; --light:#F2F4F7; }
+  * { box-sizing: border-box; }
+  body { font-family: "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif; color:#1b2330; font-size: 10.6pt; line-height: 1.65; margin:0; background:#fff; }
+  h1 { font-size: 21pt; color: var(--navy); margin: 0 0 4px; line-height: 1.3; }
+  .paper { break-before: page; }
+  .paper-head { background: var(--navy); color:#fff; padding: 12px 14px; border-radius: 6px; margin-bottom: 12px; }
+  .paper-head .t { font-size: 15pt; font-weight: 700; line-height: 1.35; }
+  .paper-head .m { font-size: 9.5pt; opacity: .85; margin-top: 4px; }
+  h2 { font-size: 13.5pt; color: var(--navy); border-bottom: 2px solid var(--navy); padding-bottom: 3px; margin: 18px 0 8px; break-after: avoid; }
+  h2 .en { font-size: 10pt; color: var(--grey); font-weight: 400; margin-left: 6px; }
+  h3 { font-size: 11.5pt; color: var(--navy); margin: 12px 0 4px; border-left: 4px solid var(--air); padding-left: 7px; break-after: avoid; }
+  h3 .en { font-size: 9.5pt; color: var(--grey); font-weight: 400; margin-left: 4px; }
+  p { margin: 3px 0 7px; }
+  ul { margin: 2px 0 7px; padding-left: 18px; }
+  li { margin: 2px 0; }
+  .easy { background: var(--light); border-radius: 6px; padding: 7px 11px; margin: 6px 0 9px; }
+  .easy::before { content: "쉽게 말하면 · "; font-weight: 700; color: var(--blue); }
+  .case { background: #FDF0E6; border: 1.5px solid var(--air); border-radius: 6px; padding: 7px 11px; margin: 6px 0 9px; break-inside: avoid; }
+  .case::before { content: "📌 우리 케이스 · "; font-weight: 700; color: var(--air); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+  figure { margin: 6px 0 10px; break-inside: avoid; }
+  figure img { width: 100%; display: block; border-radius: 3px; }
+  figure.s img { max-height: 210px; object-fit: contain; }
+  figure.m img { max-height: 290px; object-fit: contain; }
+  figcaption { font-size: 9pt; color: var(--grey); margin-top: 3px; line-height: 1.5; }
+  figcaption b { color: var(--navy); }
+  table { border-collapse: collapse; width: 100%; font-size: 9.4pt; margin: 6px 0 10px; break-inside: avoid; }
+  th { background: var(--navy); color: #fff; text-align: left; padding: 4px 6px; font-weight: 600; }
+  td { border-bottom: 1px solid #dde2e8; padding: 4px 6px; vertical-align: top; }
+  tr:nth-child(even) td { background: #F7F9FB; }
+  .toc td { padding: 3px 6px; }
+  .note { font-size: 8.8pt; color: var(--grey); }
+</style>
+</head>
+<body>
+<!--
+  Components (keep these class names; CSS above styles them):
+  <h1>제목</h1>                               cover title
+  <section class="paper">                     one per paper (starts a new page)
+    <div class="paper-head"><div class="t">Part A · 저자 연도 — 제목</div><div class="m">저널 · doi</div></div>
+    <h2>한글 소제목 <span class="en">Original Heading</span></h2>
+    <h3>하위 소제목 <span class="en">Sub-heading</span></h3>
+    <p>, <ul><li>                              explanation (short sentences, bullets)
+    <div class="easy">한 줄 요약</div>          "쉽게 말하면" box (label added by CSS)
+    <div class="case">케이스 연결</div>          "📌 우리 케이스" box (only if a case was given)
+    <div class="grid2"> … </div>               two columns (text + figure, or two figures)
+    <figure class="s|m"><img src="img/…"><figcaption><b>Fig N.</b> 무엇을 보면 되는지</figcaption></figure>
+    <table><tr><th>…</th></tr><tr><td>…</td></tr></table>
+  </section>
+-->
+{{BODY}}
+</body>
+</html>

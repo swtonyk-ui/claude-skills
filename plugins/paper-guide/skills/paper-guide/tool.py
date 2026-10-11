@@ -2,6 +2,7 @@
 
   extract <out_dir> <pdf> [<pdf> ...]   text per page + embedded figures + contact sheets
   preview <pdf> <out_png>               page thumbnails of a rendered PDF on one sheet
+  bundle <html> <out_html>              inline img/ files as base64 -> single self-contained HTML
 
 Run with:  python3 tool.py ...   (needs: pip install pymupdf pillow)
 """
@@ -59,11 +60,28 @@ def preview(pdf, out_png):
     print(f"{len(ims)} pages -> {out_png}")
 
 
+def bundle(html, out):
+    import base64, mimetypes, re
+    base = Path(html).parent
+
+    def inline(m):
+        f = base / m.group(2)
+        if not f.is_file():
+            return m.group(0)
+        mime = mimetypes.guess_type(f.name)[0] or "image/png"
+        return f'{m.group(1)}data:{mime};base64,{base64.b64encode(f.read_bytes()).decode()}"'
+
+    Path(out).write_text(re.sub(r'(src=")(?!data:|https?:)([^"]+)"', inline, Path(html).read_text()))
+    print(f"-> {out}")
+
+
 if __name__ == "__main__":
     cmd, *args = sys.argv[1:]
     if cmd == "extract":
         extract(args[0], args[1:])
     elif cmd == "preview":
         preview(*args)
+    elif cmd == "bundle":
+        bundle(*args)
     else:
         sys.exit(__doc__)
