@@ -44,6 +44,9 @@
   .pearl::before { content: "판독 팁 · "; font-weight: 700; color: #8A7000; }
   .takehome { background: var(--navy); color: #fff; border-radius: 6px; padding: 8px 12px; margin: 14px 0; break-inside: avoid; }
   .takehome::before { content: "Take-home message"; display: block; font-weight: 700; color: #FFD9B8; }
+  .quiz { border: 1.5px dashed var(--blue); border-radius: 6px; padding: 7px 11px; margin: 12px 0; break-inside: avoid; }
+  .quiz::before { content: "Quiz"; display: block; font-weight: 700; color: var(--blue); }
+  .quiz .ans { display: block; font-size: 9.2pt; color: var(--green); margin: 1px 0 5px; }
   .note { font-size: 8.8pt; color: var(--grey); }
 </style>
 </head>
@@ -64,6 +67,7 @@
     <div class="appraise">…</div>              비판적 읽기 (original research)
     <div class="pearl">…</div>                 판독 팁 / pitfall (review)
     <div class="takehome"><ul><li>…</li></ul></div>  end of each paper
+    <div class="quiz"><ol><li>질문<span class="ans">정답: … — 해설 (Fig N)</span></li></ol></div>  after take-home
     <table><tr><th>…</th></tr><tr><td>…</td></tr></table>
   </section>
 -->
