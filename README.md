@@ -16,7 +16,8 @@
 
 ### claude.ai
 
-`plugins/paper-guide/skills/paper-guide` 폴더를 zip으로 묶어 Settings → Capabilities → Skills에서 업로드 (코드 실행 켜기 필요).
+1. [**paper-guide.zip 다운로드**](https://github.com/swtonyk-ui/claude-skills/releases/latest/download/paper-guide.zip) (항상 최신 버전)
+2. claude.ai → Settings → Capabilities → 코드 실행 켜기 → Skills → 업로드
 
 ### ChatGPT (나만의 GPT)
 
